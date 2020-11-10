@@ -25,10 +25,12 @@ use App\Entity\Booking;
 class CreateBooking extends AbstractController
 {
     /**
-     * @Route("/create_booking")
+     * @Route("/create_booking", name="create_booking")
      */
     public function create_booking(Request $request)
     {
+        $this->generateUrl('create_booking');
+
         $form = $this->createFormBuilder()
             ->add('firstName', TextType::class, [
                 'required' => true
@@ -69,7 +71,8 @@ class CreateBooking extends AbstractController
                 'required' => true
             ])
             ->add('additionalInformation', TextareaType::class, [
-                'required' => false
+                'required' => false,
+                'empty_data' => 'Empty'
             ])
             ->add('submit', SubmitType::class, ['label' => 'Book Now!'])
             ->getForm();
@@ -113,6 +116,7 @@ class CreateBooking extends AbstractController
      */
     public function bookings()
     {
+        $this->generateUrl('bookings');
         $repository = $this->getDoctrine()->getRepository(Booking::class);
         $bookings = $repository->findAll();
 

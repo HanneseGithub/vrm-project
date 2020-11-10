@@ -1,0 +1,20 @@
+.menu {
+    height: 4em;
+    padding-left: 6em;
+}
+.menu-link {
+    display: inline-block;
+    margin-right: 1em;
+    padding: 1em;
+    border-top: none;
+    background-color: #BDD2FA;
+    box-sizing: border-box;
+}
+a.menu-link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.menu-link.active{
+    color: #000000;
+}
