@@ -11,6 +11,8 @@
 
 {% block body %}
     {{ include('bookings/header.html.twig') }}
-    <div class="content"></div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
     {{ include('bookings/footer.html.twig') }}
 {% endblock %}
