@@ -1,0 +1,9 @@
+.booking-table {
+    padding: 1em;
+    border-collapse: collapse;
+}
+
+.booking-table th,
+.booking-table td {
+    padding: .5em;
+}
